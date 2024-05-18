@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public enum ItemType
 {
-    NormalAtk, // ÀÏ¹İ°ø°İ
-    AttributeAtk, // ¼Ó¼º°ø°İ 
-    MainAtk, // ¸ŞÀÎ°ø°İ
-    Etc // ±âÅ¸
+    NormalAtk, // ì¼ë°˜ê³µê²©
+    AttributeAtk, // ì†ì„±ê³µê²© 
+    MainAtk, // ë©”ì¸ê³µê²©
+    Etc // ê¸°íƒ€
 }
 
 [System.Serializable]
