@@ -7,7 +7,7 @@ public class ScreenShot : MonoBehaviour
 {
     public string Name;
 
-    [Button("��Ĭ!")]
+    [Button("ÂûÄ¬!")]
     public void TakeAShot()
     {
         ScreenCapture.CaptureScreenshot(Name + ".png");
