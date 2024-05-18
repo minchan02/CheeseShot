@@ -8,7 +8,7 @@ public class Shop : MonoBehaviour
     Stats stat;
     void Start()
     {
-        stat = GameObject.Find("BaseStats").GetComponent<Stats>();  // BaseStats ¿ÀºêÁ§Æ®ÀÇ Stats ½ºÅ©¸³Æ® ºÒ·¯¿È 
+        stat = GameObject.Find("BaseStats").GetComponent<Stats>();  // BaseStats ì˜¤ë¸Œì íŠ¸ì˜ Stats ìŠ¤í¬ë¦½íŠ¸ ë¶ˆëŸ¬ì˜´ 
     }
 
     public void IsMNode()
