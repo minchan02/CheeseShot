@@ -13,7 +13,7 @@ public class CameraFallow : MonoBehaviour
 
     [Header("Settings")]
     public Vector3 offset;
-    public float focusSpeed; //Lerp¿Í ¾à°£ ´Ù¸¥ »ç¿ë ¹æ¹ı, °ªÀÌ ³·À»¼ö·Ï ´õ ºü¸§
+    public float focusSpeed; //Lerpì™€ ì•½ê°„ ë‹¤ë¥¸ ì‚¬ìš© ë°©ë²•, ê°’ì´ ë‚®ì„ìˆ˜ë¡ ë” ë¹ ë¦„
     public float focusAmount;
     public float fovSpeed;
     public float startFOV;
