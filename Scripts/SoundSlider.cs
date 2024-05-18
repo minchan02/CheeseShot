@@ -6,19 +6,19 @@ using UnityEngine.Audio;
 
 public class SoundSlider : MonoBehaviour
 {
-    float volume1; // bgm º¼·ı ´ã´ç
-    float volume2; // sfx º¼·ı ´ã´ç
+    float volume1; // bgm ë³¼ë¥¨ ë‹´ë‹¹
+    float volume2; // sfx ë³¼ë¥¨ ë‹´ë‹¹
     public Slider bgmSlider;
     public Slider sfxSlider;
     public void Start()
     {
-        SoundManager.instance.mixer.GetFloat("BGSound", out volume1); // º¼·ı°ª °¡Á®¿Í¼­ ½½¶óÀÌ´õ °ª¿¡ ³Ö±â
+        SoundManager.instance.mixer.GetFloat("BGSound", out volume1); // ë³¼ë¥¨ê°’ ê°€ì ¸ì™€ì„œ ìŠ¬ë¼ì´ë” ê°’ì— ë„£ê¸°
         bgmSlider.value = Mathf.Pow(10f, volume1 / 20f);
         SoundManager.instance.mixer.GetFloat("SFXVolume", out volume2);
         sfxSlider.value = Mathf.Pow(10f, volume2 / 20f);
 
 
-        bgmSlider.onValueChanged.AddListener(SoundManager.instance.BGSoundVolume); // ¼Ò¸® º¼·ı°ª ¼³Á¤
+        bgmSlider.onValueChanged.AddListener(SoundManager.instance.BGSoundVolume); // ì†Œë¦¬ ë³¼ë¥¨ê°’ ì„¤ì •
         sfxSlider.onValueChanged.AddListener(SoundManager.instance.SFXSoundVolume);
     }
 }
