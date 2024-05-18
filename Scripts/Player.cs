@@ -11,13 +11,13 @@ public class Player : MonoBehaviour
     public static Player instance;
     public static Vector2 position;
 
-    [Header("¿ÜºÎ Å¬·¡½º")]
+    [Header("ì™¸ë¶€ í´ë˜ìŠ¤")]
     public GameManager gameManager;
     public ItemManager ItemManager;
-    public Item Cuitem; // ÇöÀç ¾ÆÀÌÅÛ
-    public Joystick joystick; //Á¶ÀÌ½ºÆ½
+    public Item Cuitem; // í˜„ì¬ ì•„ì´í…œ
+    public Joystick joystick; //ì¡°ì´ìŠ¤í‹±
 
-    [Header("ÇÃ·¹ÀÌ¾î Á¤º¸")]
+    [Header("í”Œë ˆì´ì–´ ì •ë³´")]
     public int health;
     [Space]
     public int maxHealth;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public float bulletRate;
     public float bulletRange;
 
-    [Header("°ø°İ ³ëµå")]
+    [Header("ê³µê²© ë…¸ë“œ")]
     public int Up;
     public int Down;
     public int Right;
@@ -40,42 +40,42 @@ public class Player : MonoBehaviour
 
     public enum Element { None, Fire, Water, Nature, Electro, Wind, Poison, Ground };
 
-    [Header("¼Ó¼º ³ëµå")]
+    [Header("ì†ì„± ë…¸ë“œ")]
     public Element elementA;
     public Element elementB;
     public Element elementC;
 
-    [Header("³ëµå")]
-    public int SlotIdx = 0;    // ³ëµå ÀÚ¸®
-    public List<Slot> slotList = new List<Slot>(); // ½½·Ô ¸®½ºÆ®
+    [Header("ë…¸ë“œ")]
+    public int SlotIdx = 0;    // ë…¸ë“œ ìë¦¬
+    public List<Slot> slotList = new List<Slot>(); // ìŠ¬ë¡¯ ë¦¬ìŠ¤íŠ¸
 
-    [Header("Ã¼·Â")]
-    public float hitDelay; //¸ÂÀº ÈÄ hitDelayÃÊ ÈÄ¿¡ À¯·É»óÅÂ ÇØÁ¦
+    [Header("ì²´ë ¥")]
+    public float hitDelay; //ë§ì€ í›„ hitDelayì´ˆ í›„ì— ìœ ë ¹ìƒíƒœ í•´ì œ
     public float nockback;
 
-    [Header("¹ß»ç")]
+    [Header("ë°œì‚¬")]
     public Projectile bullet;
     public Vector2 shootOffset;
-    public float shootAngle; //µÎ¹ß ½î±â / ¼¼¹ß ½î±â ÃÑ¾Ë »çÀÌ °£°İ
+    public float shootAngle; //ë‘ë°œ ì˜ê¸° / ì„¸ë°œ ì˜ê¸° ì´ì•Œ ì‚¬ì´ ê°„ê²©
     public float shootDist;
     public LayerMask enemyLayer;
 
     [Header("UI")]
-    public GameObject NodeChange;  // ³ëµå ½ºÅ³ ½½·Ô ²ËÃ¡À» ¶§ º¯°æ
-    public GameObject NodeChangeBtn;  // ³ëµå ½ºÅ³ ½½·Ô ²ËÃ¡À» ¶§ º¯°æ À¯¹« ¶ß´Â Ã¢ÀÔ´Ï´Ù
+    public GameObject NodeChange;  // ë…¸ë“œ ìŠ¤í‚¬ ìŠ¬ë¡¯ ê½‰ì°¼ì„ ë•Œ ë³€ê²½
+    public GameObject NodeChangeBtn;  // ë…¸ë“œ ìŠ¤í‚¬ ìŠ¬ë¡¯ ê½‰ì°¼ì„ ë•Œ ë³€ê²½ ìœ ë¬´ ëœ¨ëŠ” ì°½ì…ë‹ˆë‹¤
     public GameObject SelectGem;
     public GameObject CautionChange;
-    public Image ChangeGem; // ¹Ù²Ü Áª
-    public Image BeforeGem; // ¹Ù²Ù±â ÀÌÀü Áª
+    public Image ChangeGem; // ë°”ê¿€ ì ¬
+    public Image BeforeGem; // ë°”ê¾¸ê¸° ì´ì „ ì ¬
     public GameObject Question;
     public GameObject OffOkBtn;
     public GameObject ChangeOkBtn;
 
-    [Header("¾Ö´Ï¸ŞÀÌ¼Ç")]
+    [Header("ì• ë‹ˆë©”ì´ì…˜")]
     public float AttackDuration;
 
-    [HideInInspector] public float curShotDelay; //¹ß»ç ·ÎÁ÷ ÇöÀç
-    [HideInInspector] public bool isHit; //ÇÇ°İ / [HideInInspector]¸¦ ºÙ¿©¼­ ´Ù¸¥ ½ºÅ©¸³Æ®¿¡¼± Á¢±Ù °¡´ÉÇÏÁö¸¸ ¿¡µğÅÍ¿¡¼­ ´õ·¯¿ö º¸ÀÌ¹Ç·Î ¿¡µğÅÍ¿¡¼­ º¸ÀÌÁö ¾Êµµ·Ï ¼³Á¤
+    [HideInInspector] public float curShotDelay; //ë°œì‚¬ ë¡œì§ í˜„ì¬
+    [HideInInspector] public bool isHit; //í”¼ê²© / [HideInInspector]ë¥¼ ë¶™ì—¬ì„œ ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„  ì ‘ê·¼ ê°€ëŠ¥í•˜ì§€ë§Œ ì—ë””í„°ì—ì„œ ë”ëŸ¬ì›Œ ë³´ì´ë¯€ë¡œ ì—ë””í„°ì—ì„œ ë³´ì´ì§€ ì•Šë„ë¡ ì„¤ì •
     
     private Rigidbody2D rb;
     private Renderer thisRenderer;
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     private SkillHolder skill2;
     private SkillHolder skill3;
 
-    //--------------------¾÷µ¥ÀÌÆ®--------------------//
+    //--------------------ì—…ë°ì´íŠ¸--------------------//
 
     void Awake()
     {
@@ -122,9 +122,9 @@ public class Player : MonoBehaviour
         Skill();
     }
 
-    //--------------------¾×¼Ç--------------------//
+    //--------------------ì•¡ì…˜--------------------//
 
-    public void Move() //Á¶ÀÌ½ºÆ½
+    public void Move() //ì¡°ì´ìŠ¤í‹±
     {
         if (!isHit) rb.velocity = joystick.GetControl() * speed;
 
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
 
     public void Reload()
     {
-        curShotDelay += Time.deltaTime; //ÇöÀç ½Ã°£ Ãß°¡
+        curShotDelay += Time.deltaTime; //í˜„ì¬ ì‹œê°„ ì¶”ê°€
     }
 
     public void Fire()
@@ -147,8 +147,8 @@ public class Player : MonoBehaviour
         Vector2 shootPosition = (Vector2)transform.position + shootOffset;
         Vector2 dirVec = (Vector2)enemy.transform.position - shootPosition;
         FireBullet(dirVec.normalized);
-        gameManager.AttackSound(); // Å¸°İ »ç¿îµå
-        curShotDelay = 0; //ÃÑ¾ËÀ» ½î°í ³­ ÈÄ¿¡´Â º¯¼ö 0À¸·Î ÃÊ±âÈ­
+        gameManager.AttackSound(); // íƒ€ê²© ì‚¬ìš´ë“œ
+        curShotDelay = 0; //ì´ì•Œì„ ì˜ê³  ë‚œ í›„ì—ëŠ” ë³€ìˆ˜ 0ìœ¼ë¡œ ì´ˆê¸°í™”
         anim.SetBool("attacking", true);
         CancelInvoke("ResetAnim");
         Invoke("ResetAnim", AttackDuration);
@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
                 float dist = Vector2.SqrMagnitude(position - (Vector2)hits[i].transform.position);
                 if (dist < closest)
                 {
-                    closest = dist; // °¡Àå °¡±î¿î ¾ê Ã£±â
+                    closest = dist; // ê°€ì¥ ê°€ê¹Œìš´ ì–˜ ì°¾ê¸°
                     target = hits[i];
                 }
             }
@@ -212,7 +212,7 @@ public class Player : MonoBehaviour
     public void Shoot(float angle, Vector2 direction, Vector2 position)
     {
         Vector2 dirOff = Quaternion.Euler(0, 0, angle) * direction.normalized;
-        /* // ÀÓ½Ã ºñÈ°¼ºÈ­
+        /* // ì„ì‹œ ë¹„í™œì„±í™”
         int sprite = 0;
         int type = 0;
         bool water = elementA == Element.Water || elementB == Element.Water || elementC == Element.Water;
@@ -297,25 +297,25 @@ public class Player : MonoBehaviour
         if(elementA == Element.None)
         {
             elementA = element;
-            // ½ºÅ³ ÁöÁ¤
+            // ìŠ¤í‚¬ ì§€ì •
         }
         else if (elementB == Element.None)
         {
             elementB = element;
-            // ½ºÅ³ ÁöÁ¤
+            // ìŠ¤í‚¬ ì§€ì •
         }
         else if (elementC == Element.None)
         {
             elementC = element;
-            // ½ºÅ³ ÁöÁ¤
+            // ìŠ¤í‚¬ ì§€ì •
         }
         else
         {
-            //¼Ó¼º ³ëµå ±³Ã¼
+            //ì†ì„± ë…¸ë“œ êµì²´
         }
     }
 
-    //--------------------³ëµå ½ºÅ³ ½Ã½ºÅÛ--------------------//
+    //--------------------ë…¸ë“œ ìŠ¤í‚¬ ì‹œìŠ¤í…œ--------------------//
     public void ChangeNodeOn()
     {
         NodeChange.SetActive(true);
@@ -353,7 +353,7 @@ public class Player : MonoBehaviour
     public void SetNode(Item item)
     {
         Cuitem = item;
-        if(SlotIdx <= 2)    // ½½·ÔÀÌ ²Ë Â÷Áö ¾Ê¾ÒÀ» ¶§
+        if(SlotIdx <= 2)    // ìŠ¬ë¡¯ì´ ê½‰ ì°¨ì§€ ì•Šì•˜ì„ ë•Œ
         {
             slotList[SlotIdx].gameObject.SetActive(true);
             slotList[SlotIdx].itemIcon.sprite = item.itemImage;
@@ -372,7 +372,7 @@ public class Player : MonoBehaviour
             }
             SlotIdx++;
         }
-        else    // ½½·ÔÀÌ ²Ë Ã¡À» ¶§
+        else    // ìŠ¬ë¡¯ì´ ê½‰ ì°¼ì„ ë•Œ
         {
             NodeChangeBtn.SetActive(true);
             ChangeGem.sprite = item.itemImage;
@@ -380,7 +380,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public Element SelectElement(string name) =>   // ÀÌ¸§ = ¼Ó¼º
+    public Element SelectElement(string name) =>   // ì´ë¦„ = ì†ì„±
         name switch
         {
             "Fire"      => Element.Fire,
@@ -393,7 +393,7 @@ public class Player : MonoBehaviour
             _           => Element.None
         };
 
-    public int Elementidx(string name)   // ¼Ó¼º ¹øÈ£
+    public int Elementidx(string name)   // ì†ì„± ë²ˆí˜¸
     {
         return name switch
         {
@@ -408,7 +408,7 @@ public class Player : MonoBehaviour
         };
     }
 
-    public void SelectAttributeSlot(int Slotnum) // ÁªÀÌ ²Ë Ã¡À»¶§
+    public void SelectAttributeSlot(int Slotnum) // ì ¬ì´ ê½‰ ì°¼ì„ë•Œ
     {
         Question.SetActive(false);
         BeforeGem.sprite = slotList[Slotnum].itemIcon.sprite;
@@ -452,7 +452,7 @@ public class Player : MonoBehaviour
         SelectGem.SetActive(true);
     }
 
-    //--------------------ÇÔ¼ö--------------------//
+    //--------------------í•¨ìˆ˜--------------------//
 
     public static float SqrDistance(Vector3 a, Vector3 b)
     {
@@ -465,9 +465,9 @@ public class Player : MonoBehaviour
         return (short)(instance.power * persent * 0.01f);
     }
 
-    //--------------------¹°¸®--------------------//
+    //--------------------ë¬¼ë¦¬--------------------//
 
-    /*void OnTriggerEnter2D(Collider2D collision) //Àû°ú Ãæµ¹
+    /*void OnTriggerEnter2D(Collider2D collision) //ì ê³¼ ì¶©ëŒ
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
