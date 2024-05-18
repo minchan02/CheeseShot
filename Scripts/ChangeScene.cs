@@ -12,25 +12,25 @@ public class ChangeScene : MonoBehaviour
 
     }
 
-    public void ToFirst()    // Ã³À½È­¸éÀ¸·Î
+    public void ToFirst()    // ì²˜ìŒí™”ë©´ìœ¼ë¡œ
     {
         LoadingSceneController.LoadScene("FirstLoad");
     }
-    public void ToMain() // ¸ŞÀÎÀ¸·Î
+    public void ToMain() // ë©”ì¸ìœ¼ë¡œ
     {
        LoadingSceneController.LoadScene("MainMenu");
     }
-    public void ToSelectStage()  // ½ºÅ×ÀÌÁö ¼±ÅÃ
+    public void ToSelectStage()  // ìŠ¤í…Œì´ì§€ ì„ íƒ
     {
         LoadingSceneController.LoadScene("SelectStage");
     }
 
-    public void ToStage1()    // 1½ºÅ×ÀÌÁö
+    public void ToStage1()    // 1ìŠ¤í…Œì´ì§€
     {
         LoadingSceneController.LoadScene("game");
     }
     
-    public void ToShop() // »óÁ¡À¸·Î
+    public void ToShop() // ìƒì ìœ¼ë¡œ
     {
         LoadingSceneController.LoadScene("Shop");
     }
