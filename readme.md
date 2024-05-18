@@ -15,7 +15,7 @@
 
 </aside>
 
-<img src="https://github.com/minchan02/CheeseShot/blob/main/Example01.png"/>
+<img src="https://github.com/minchan02/CheeseShot/blob/main/Example01.png" width="50%"/> 
 
 → 상기 컨셉아트는 애니메이션이 미포함 되어 있으며 실제 이미지와 차이가 있습니다. (실제 이미지 : 애니메이션포함, 컬러정상)
 
