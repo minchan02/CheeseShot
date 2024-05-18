@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-[CreateAssetMenu(fileName = "new Enemy", menuName = "»õ·Î¿î Àû ÇÁ·ÎÇÊ »ı¼º")]
+[CreateAssetMenu(fileName = "new Enemy", menuName = "ìƒˆë¡œìš´ ì  í”„ë¡œí•„ ìƒì„±")]
 public class Enemy : ScriptableObject
 {
 
@@ -14,7 +14,7 @@ public class Enemy : ScriptableObject
     public GameObject prefab;
 
     [Header("Specs")]
-    public long price; // Ã³Ä¡ ½Ã ¾òÀ» ÀçÈ­ÀÇ ¾ç
+    public long price; // ì²˜ì¹˜ ì‹œ ì–»ì„ ì¬í™”ì˜ ì–‘
 
 }
 
