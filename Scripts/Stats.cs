@@ -9,17 +9,17 @@ public class Stats : MonoBehaviour
 {
     public static Stats instance = null;
 
-    [BoxGroup("ÇÃ·¹ÀÌ¾î Á¤º¸")] public int level;
+    [BoxGroup("í”Œë ˆì´ì–´ ì •ë³´")] public int level;
 
-    [BoxGroup("ÀçÈ­")] public int money;
+    [BoxGroup("ì¬í™”")] public int money;
 
-    [BoxGroup("³ëµå")] public int ENodeInt;   // ¾ğ¶ô µÇ¾î ÀÖ´Â ¼Ó¼º ³ëµå ¼ö
-    [BoxGroup("³ëµå")] public bool MNode;  // ¸ŞÀÎ ³ëµå ¾ğ¶ô
+    [BoxGroup("ë…¸ë“œ")] public int ENodeInt;   // ì–¸ë½ ë˜ì–´ ìˆëŠ” ì†ì„± ë…¸ë“œ ìˆ˜
+    [BoxGroup("ë…¸ë“œ")] public bool MNode;  // ë©”ì¸ ë…¸ë“œ ì–¸ë½
 
-    [BoxGroup("UI")] public TextMeshProUGUI Coin; // ÇÁ·Ñ·Î±× ½ºÅµ
+    [BoxGroup("UI")] public TextMeshProUGUI Coin; // í”„ë¡¤ë¡œê·¸ ìŠ¤í‚µ
 
-    [BoxGroup("±âÅ¸")] public int stage; // ½ºÅ×ÀÌÁö 
-    [BoxGroup("±âÅ¸")] public bool skip; // ÇÁ·Ñ·Î±× ½ºÅµ
+    [BoxGroup("ê¸°íƒ€")] public int stage; // ìŠ¤í…Œì´ì§€ 
+    [BoxGroup("ê¸°íƒ€")] public bool skip; // í”„ë¡¤ë¡œê·¸ ìŠ¤í‚µ
   
 
     private void Awake()
@@ -27,7 +27,7 @@ public class Stats : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance); // ¾ÀÀÌ º¯ÇØµµ Á¦°Å ¾ÈµÇ°Ô ÇÔ
+            DontDestroyOnLoad(instance); // ì”¬ì´ ë³€í•´ë„ ì œê±° ì•ˆë˜ê²Œ í•¨
 
         }
         else
