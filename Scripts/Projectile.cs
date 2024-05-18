@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Projectile", menuName = "»õ·Î¿î ÃÑ¾Ë ÇÁ·ÎÇÊ »ı¼º")]
+[CreateAssetMenu(fileName = "new Projectile", menuName = "Â»ÃµÂ·ÃÂ¿Ã® ÃƒÃ‘Â¾Ã‹ Ã‡ÃÂ·ÃÃ‡ÃŠ Â»Ã½Â¼Âº")]
 public class Projectile : ScriptableObject
 {
 
